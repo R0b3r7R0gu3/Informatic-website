@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatica per Tutti</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+
+    <!-- Animazione di ingresso -->
+    <div id="welcome" class="fade-in">
+        <h1>Benvenuto nel sito di Informatica per Tutti!</h1>
+        <p>Un sito dedicato alla tecnologia, per principianti, esperti e curiosi.</p>
+    </div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#informazioni">Informazioni</a></li>
+                <li><a href="#forum">Forum</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Cos'è l'informatica?</h2>
+        <p>L'informatica è la scienza che si occupa dell'elaborazione e gestione delle informazioni tramite l'uso di computer. Studia linguaggi di programmazione, hardware, software e reti.</p>
+        <img src="https://via.placeholder.com/600x300" alt="Immagine informatica">
+    </section>
+
+    <section id="informazioni">
+        <h2>Informazioni Dettagliate</h2>
+
+        <!-- Hardware -->
+        <h3>Componenti Hardware</h3>
+        <p>Un computer è composto da vari componenti, come CPU, RAM, scheda madre, scheda grafica e disco rigido. Ognuno di questi componenti ha un ruolo specifico nel funzionamento del sistema.</p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Software -->
+        <h3>Cos'è il Software?</h3>
+        <p>Il software è l'insieme di programmi che permettono di gestire le risorse hardware del computer. I sistemi operativi e le applicazioni sono esempi di software.</p>
+
+        <!-- Linguaggi di Programmazione -->
+        <h3>Linguaggi di Programmazione</h3>
+        <p>Alcuni dei linguaggi più usati sono Python, JavaScript e C++. Ogni linguaggio ha caratteristiche che lo rendono adatto a specifici tipi di progetti.</p>
+    </section>
+
+    <section id="forum">
+        <h2>Forum - Commenti</h2>
+        <form id="commentForm">
+            <input type="text" id="username" placeholder="Il tuo nome" required>
+            <textarea id="comment" placeholder="Scrivi un commento..." required></textarea>
+            <button type="submit">Invia</button>
+        </form>
+        <div id="commentSection"></div>
+    </section>
+
+    <section id="contatti">
+        <h2>Contattaci</h2>
+        <form action="mailto:burcarobert269@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="nome" placeholder="Il tuo nome" required>
+            <input type="email" name="email" placeholder="La tua email" required>
+            <textarea name="messaggio" placeholder="Il tuo messaggio" required></textarea>
+            <button type="submit">Invia</button>
+        </form>
+    </section>
+
+    <section id="login">
+        <h2>Login / Registrazione</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Nome utente" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p>Non hai un account? <a href="#">Registrati</a></p>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
