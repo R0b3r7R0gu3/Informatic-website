@@ -1,30 +1,29 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("commentForm");
-    const commentSection = document.getElementById("commentSection");
-
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        let username = document.getElementById("username").value;
-        let comment = document.getElementById("comment").value;
-
-        if (username && comment) {
-            let commentHTML = `<p><strong>${username}:</strong> ${comment}</p>`;
-            commentSection.innerHTML += commentHTML;
-
-            // Salva i commenti nel LocalStorage
-            let comments = JSON.parse(localStorage.getItem("comments")) || [];
-            comments.push({ username, comment });
-            localStorage.setItem("comments", JSON.stringify(comments));
-
-            // Pulisce il form
-            form.reset();
-        }
-    });
-
-    // Carica i commenti salvati
-    let savedComments = JSON.parse(localStorage.getItem("comments")) || [];
-    savedComments.forEach(c => {
-        commentSection.innerHTML += `<p><strong>${c.username}:</strong> ${c.comment}</p>`;
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.style.opacity = "1";
 });
+
+function showPage(pageId) {
+    document.querySelectorAll(".page").forEach(page => page.classList.remove("active"));
+    document.getElementById(pageId).classList.add("active");
+}
+
+function handleLogin(event) {
+    event.preventDefault();
+    document.getElementById("loginResponse").classList.remove("hidden");
+    showPage("home");
+}
+
+function submitContact(event) {
+    event.preventDefault();
+    document.getElementById("contactResponse").classList.remove("hidden");
+}
+
+function submitForumMessage() {
+    let input = document.getElementById("forumInput");
+    if (input.value.trim() !== "") {
+        let message = document.createElement("p");
+        message.textContent = input.value;
+        document.getElementById("forumMessages").appendChild(message);
+        input.value = "";
+    }
+}
