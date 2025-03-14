@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.body.style.opacity = "1";
+    showPage("home"); // Mostra la home all'avvio
 });
 
 function showPage(pageId) {
@@ -10,20 +11,26 @@ function showPage(pageId) {
 function handleLogin(event) {
     event.preventDefault();
     document.getElementById("loginResponse").classList.remove("hidden");
-    showPage("home");
+    setTimeout(() => {
+        showPage("home");
+    }, 1000);
 }
 
 function submitContact(event) {
     event.preventDefault();
     document.getElementById("contactResponse").classList.remove("hidden");
+    setTimeout(() => {
+        document.getElementById("contactResponse").classList.add("hidden");
+    }, 3000);
 }
 
 function submitForumMessage() {
     let input = document.getElementById("forumInput");
+    let forumMessages = document.getElementById("forumMessages");
     if (input.value.trim() !== "") {
         let message = document.createElement("p");
         message.textContent = input.value;
-        document.getElementById("forumMessages").appendChild(message);
+        forumMessages.appendChild(message);
         input.value = "";
     }
 }
